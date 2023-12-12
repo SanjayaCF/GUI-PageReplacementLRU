@@ -49,38 +49,32 @@ def add_output():
     frames.delete(0, ctk.END)
     add_table(output[1])
 
-# Function to navigate to the LRU simulation page
 def navigate_to_simulation():
-    notebook.select(1)  # Select the second tab (index starts from 0)
+    notebook.select(1) 
     references.delete(0, ctk.END)
     frames.delete(0, ctk.END)
     add_table(AlgoritmaLRU().simulasi_LRU(references.get(), frames.get())[1])
-    references.focus_set()  # Set focus on the references entry
+    references.focus_set() 
     frames.focus_set()
 
 root = ctk.CTk()
 root.geometry("750x450")
 root.title("Aplikasi Simulasi Algoritma LRU")
 
-# Create a notebook to hold multiple pages
 notebook = ttk.Notebook(root)
 
-# Opening Page
 opening_frame = ctk.CTkFrame(notebook)
 notebook.add(opening_frame, text="Opening Page")
 
-# Introduction Label and Navigation Button
 intro_label = ctk.CTkLabel(opening_frame, text="Welcome to the LRU Simulation App!", font=ctk.CTkFont(size=18))
 intro_label.pack(pady=20)
 
 navigate_button = ctk.CTkButton(opening_frame, text="Start Simulation", width=500, command=navigate_to_simulation)
 navigate_button.pack(pady=20)
 
-# LRU Simulation Page
 simulation_frame = ctk.CTkFrame(notebook)
 notebook.add(simulation_frame, text="LRU Simulation")
 
-# Title Label and other UI elements for the LRU simulation page (same as your provided code)
 title_label = ctk.CTkLabel(simulation_frame, text="Simulasi Algoritma LRU Page Replacement", font=ctk.CTkFont(size=30, weight="bold"))
 title_label.pack(padx=10, pady=(40, 20))
 
