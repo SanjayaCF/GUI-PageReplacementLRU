@@ -40,7 +40,7 @@ def add_table(_dict):
     for iteration in _dict:
         data = (iteration, _dict[iteration][0], _dict[iteration][1], _dict[iteration][2])
         table.insert(parent='', index=ctk.END, values=data, tag=(_dict[iteration][2] == "✓"))
-        table.tag_configure(tagname=True, background="#00ff00")
+        table.tag_configure(tagname=True, background="#00ff00", foreground='black')
 
 def add_output():
     output = AlgoritmaLRU().simulasi_LRU(references.get(),frames.get())
