@@ -40,15 +40,15 @@ def add_table(_dict):
     for iteration in _dict:
         data = (iteration, _dict[iteration][0], _dict[iteration][1], _dict[iteration][2])
         table.insert(parent='', index=ctk.END, values=data, tag=(_dict[iteration][2] == "✓"))
-        table.tag_configure(tagname=True, background="#00ff00")
+        table.tag_configure(tagname=True, background="#00ff00", foreground='black')
 
 def add_output():
     output = AlgoritmaLRU().simulasi_LRU(references.get(),frames.get())
     label.configure(text=output[0])
-    references.delete(0, ctk.END)
-    references.insert(0, "7 0 1 2 0 3 0 4 2 3 0 3 2 1 2 0 1 7 0 1")
-    frames.delete(0, ctk.END)
-    frames.insert(0, "3")
+    #references.delete(0, ctk.END)
+    #references.insert(0, "7 0 1 2 0 3 0 4 2 3 0 3 2 1 2 0 1 7 0 1")
+    #frames.delete(0, ctk.END)
+    #frames.insert(0, "3")
     add_table(output[1])
 
 def navigate_to_simulation():
